@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/XLAPP.iml" filepath="$PROJECT_DIR$/XLAPP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lauch/lauch.iml" filepath="$PROJECT_DIR$/lauch/lauch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xlms/xlms.iml" filepath="$PROJECT_DIR$/xlms/xlms.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#96000000"
+    android:orientation="vertical"
+    android:padding="5dp">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:textSize="12sp"
+        android:background="@color/red"
+        android:text="关闭"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/btn_close"
+        android:layout_height="30dp" />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginTop="5dp"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_start"
+            android:textColor="@color/white" />
+    </ScrollView>
+</LinearLayout>
+

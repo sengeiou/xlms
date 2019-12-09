@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply from: '../config.gradle'
+
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        compileSdkVersion 26
+        buildToolsVersion "27.0.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'arm64-v8a','armeabi-v7a','x86','x86_64','armeabi'
+        }
+        flavorDimensions "versionCode"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+
+dependencies {
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile 'com.github.ybq:Android-SpinKit:1.4.0'
+    compile 'com.google.code.gson:gson:2.8.5'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
+    compile 'com.github.zcweng:switch-button:0.0.3@aar'
+    compile 'com.android.support:appcompat-v7:26.1.0+'
+    compile "com.android.support:support-v4:26.1.0+"
+    compile 'com.android.support:design:26.+'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.loopj.android:android-async-http:1.4.8'
+}
+
+
+ext {
+    libraryPackaging = 'aar'                                            //上传aar形式的打包文件
+    bintrayRepo = 'maven' // your repo name
+    bintrayName = 'xlms' // has to be same as your library module name
+    publishedGroupId = 'com.xl' // your module package name
+    libraryName = 'xlms'
+    artifact = 'xlms'
+    // jcenter
+    libraryDesc = 'Base MS for android'
+    versionName = '0.6.0'                                               // 版本号，比如：22.2.1
+    websiteUrl = 'http://www.szxinlian.net'              // 可以填写github上的库地址.
+    licenseName = "Apache-2.0"
+    vcsUrl = 'http://www.szxinlian.net'
+    issueTrackerUrl = 'http://www.szxinlian.net'
+    libraryVersionDesc = 'version descriotion'
+    // maven
+    developerId = 'shihuanzhang'
+    developerName = 'shihuanzhang'
+    developerEmail = '2335946896@qq.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+
+}
+apply from: 'android-maven-install.gradle'
+apply from: 'android-tasks.gradle'
+apply from: 'bintray.gradle'

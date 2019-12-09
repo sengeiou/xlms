@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.XLMain">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/ll_loading"
+        android:background="#185186"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <com.github.ybq.android.spinkit.SpinKitView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:SpinKit_Color="@color/white" />
+        <TextView
+            android:id="@+id/tv_status"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="@string/load_data" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/ll_not_network"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/no_network"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#646363"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="@string/no_network" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:text="@string/refresh"
+                android:gravity="center"
+                android:id="@+id/btn_retry"
+                android:paddingLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingRight="20dp"
+                android:background="#3392ea"
+                android:layout_height="40dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:text="@string/setting_data"
+                android:id="@+id/btn_setting_network"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="#3392ea"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:id="@+id/ll_no_data"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/no_data"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#646363"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="@string/no_data" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:text="@string/refresh"
+                android:gravity="center"
+                android:id="@+id/btn_reload"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="#3392ea"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

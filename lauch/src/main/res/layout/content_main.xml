@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <Button
+        android:layout_width="wrap_content"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:id="@+id/btn_lauch"
+        android:background="@color/app_blue"
+        android:layout_height="wrap_content"
+        android:text="Lauch XLApp"/>
+
+</LinearLayout>

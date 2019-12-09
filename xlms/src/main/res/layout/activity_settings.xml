@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/panel_bg"
+    android:paddingBottom="10dp"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        android:layout_height="wrap_content"
+        android:background="@color/app_blue"
+        android:minHeight="?attr/actionBarSize" />
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:scrollbars="none"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:id="@+id/im_service_host"
+                android:background="@drawable/shape_bg_top_bottom_border"
+                app:itemText="@string/service_host"
+                android:layout_height="wrap_content"/>
+
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_serivce_status"
+                android:background="@drawable/shape_bg_bottom_border"
+                app:itemText="@string/service_status"
+                android:layout_height="wrap_content"/>
+
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_version_code"
+                android:background="@drawable/shape_bg_bottom_border"
+                app:itemText="@string/app_version"
+                android:layout_height="wrap_content"/>
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_termainal_number"
+                android:background="@drawable/shape_bg_bottom_border"
+                app:itemText="@string/termainal_number"
+                android:layout_height="wrap_content"/>
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:id="@+id/im_wifi_setting"
+                android:background="@drawable/shape_bg_top_bottom_border"
+                app:itemText="@string/wifi_setting"
+                android:layout_height="wrap_content"/>
+
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_system_setting"
+                android:background="@drawable/shape_bg_bottom_border"
+                app:itemText="@string/system_setting"
+                android:layout_height="wrap_content"/>
+
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_apps"
+                android:background="@drawable/shape_bg_bottom_border"
+                app:itemText="@string/all_apps"
+                android:layout_height="wrap_content"/>
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_bind"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_bg_top_bottom_border"
+                app:itemText="@string/bind_termainal"
+                android:layout_height="wrap_content"/>
+            <com.xl.xyl2.widget.ItemMore
+                android:layout_width="match_parent"
+                android:id="@+id/im_use"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_bg_top_bottom_border"
+                app:itemText="@string/residual_storage_space"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                style="@style/item_height"
+                android:background="@drawable/shape_bg_bottom_border"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:text="@string/show_log"
+                    android:layout_centerVertical="true"
+                    android:textColor="#363636"
+                    android:layout_height="wrap_content"/>
+                <com.suke.widget.SwitchButton
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/switch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:textColor="@color/white"
+        android:text="@string/logout_systen"
+        android:background="@drawable/btn_round_red"
+        android:id="@+id/btn_logout"
+        android:layout_height="45dp" />
+</LinearLayout>

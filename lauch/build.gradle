@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+android {
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.xl.demo"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'XYL'
+            keyPassword 'xinyunlian'
+            storeFile file('RK_XYL.jks')
+            storePassword 'xinyunlian'
+        }
+        debug {
+            keyAlias 'XYL'
+            keyPassword 'xinyunlian'
+            storeFile file('RK_XYL.jks')
+            storePassword 'xinyunlian'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'app_proguard-rules.pro'
+//            zipAlignEnabled true
+//            shrinkResources true
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [
+                    xl_key_ip     : "http://xips.szxinlianyun.com",
+                    xl_key_port   : 80,
+                    xl_key_lotcode: "L20191203001",
+                    baidu_api_Key : "1SiFZnqcHd3ugn2IvViBvg41U3R0isxs"
+            ]
+            debug {
+                minifyEnabled false
+                signingConfig signingConfigs.debug
+                manifestPlaceholders = [
+                        xl_key_ip     : "http://xips.szxinlianyun.com",
+                        xl_key_port   : 80,
+                        xl_key_lotcode: "L20191203001",
+                        baidu_api_Key : "1SiFZnqcHd3ugn2IvViBvg41U3R0isxs"
+                ]
+            }
+        }
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':xlms')
+}
